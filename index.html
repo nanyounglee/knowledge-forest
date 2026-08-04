@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="지식의 숲 1~3회차 강연 요약 — 의사결정·경영철학·전략·리더십·지식기록·조직과 지속가능성의 핵심 개념과 프레임워크">
+<title>지식의 숲 Day 1–3 · 핵심 개념·프레임워크 요약</title>
+<style>
+  :root{
+    --ink:#1a1c1e; --muted:#5c6470; --line:#e3e6ea; --bg:#ffffff;
+    --card:#f7f8fa; --accent:#2f5d50; --accent-soft:#e7efec; --gold:#a8792c;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --ink:#e9ecef; --muted:#a5adb8; --line:#2b2f36; --bg:#14161a;
+      --card:#1c1f25; --accent:#7fb8a6; --accent-soft:#1f2b28; --gold:#d0a45a; }
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    line-height:1.5; -webkit-font-smoothing:antialiased;
+  }
+  .page{max-width:900px; margin:0 auto; padding:32px 34px 40px;}
+  header{border-bottom:2px solid var(--accent); padding-bottom:14px; margin-bottom:20px;}
+  .kicker{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); font-weight:700;}
+  h1{font-size:24px; margin:4px 0 4px; letter-spacing:-.01em;}
+  .sub{color:var(--muted); font-size:13px;}
+  .thesis{
+    background:var(--accent-soft); border-left:4px solid var(--accent);
+    padding:12px 16px; border-radius:8px; margin:18px 0 24px; font-size:14.5px;
+  }
+  .thesis b{color:var(--accent);}
+  .grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:16px 18px;
+  }
+  .card.full{grid-column:1 / -1;}
+  .card h2{
+    font-size:15px; margin:0 0 10px; display:flex; align-items:center; gap:8px;
+  }
+  .num{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:22px; height:22px; border-radius:6px; background:var(--accent); color:#fff;
+    font-size:12px; font-weight:700; flex:none;
+  }
+  .card p{margin:0 0 8px; font-size:13.3px; color:var(--ink);}
+  .card p:last-child{margin-bottom:0;}
+  .lead{color:var(--muted); font-size:12.5px; margin:-4px 0 10px;}
+  strong.hl{color:var(--gold);}
+  table{width:100%; border-collapse:collapse; margin-top:6px; font-size:12.4px;}
+  th,td{text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); vertical-align:top;}
+  th{color:var(--accent); font-size:11.5px; text-transform:uppercase; letter-spacing:.05em;}
+  td.k{font-weight:700; white-space:nowrap;}
+  .flow{display:flex; align-items:center; flex-wrap:wrap; gap:6px; margin-top:8px; font-size:12.5px;}
+  .chip{background:var(--accent-soft); color:var(--accent); border-radius:16px; padding:4px 12px; font-weight:600;}
+  .arr{color:var(--muted); font-weight:700;}
+  .two{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:6px;}
+  .mini{border:1px solid var(--line); border-radius:8px; padding:10px 12px; font-size:12.5px;}
+  .mini b{display:block; color:var(--accent); margin-bottom:3px; font-size:12px;}
+  .daybar{
+    display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+    margin:38px 0 16px; padding-bottom:8px; border-bottom:2px solid var(--accent);
+  }
+  .daybar .dnum{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); font-weight:700;}
+  .daybar h2{font-size:18px; margin:0; letter-spacing:-.01em;}
+  .daybar .dmeta{color:var(--muted); font-size:12px; margin-left:auto;}
+  .card ul{margin:0 0 8px; padding-left:17px; font-size:13.3px;}
+  .card li{margin-bottom:4px;}
+  .card ul:last-child, .card li:last-child{margin-bottom:0;}
+  .mini.bad b{color:var(--gold);}
+  footer{margin-top:24px; padding-top:12px; border-top:1px solid var(--line); font-size:11.5px; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+  footer a{color:var(--accent);}
+  @media (max-width:640px){ .grid,.two{grid-template-columns:1fr;} }
+  .pdfbtn{
+    position:fixed; right:20px; bottom:20px; z-index:20;
+    background:var(--accent); color:#fff; border:0; border-radius:22px;
+    padding:11px 20px; font:700 13px/1 inherit; font-family:inherit;
+    cursor:pointer; box-shadow:0 3px 12px rgba(0,0,0,.2);
+  }
+  .pdfbtn:hover{opacity:.86;}
+
+  @media (max-width:640px){
+    .page{padding:24px 18px 32px;}
+    td.k{white-space:normal;}
+  }
+  @page{ size:A4; margin:12mm; }
+  @media print{
+    /* 다크모드에서 인쇄해도 밝은 팔레트로 고정 */
+    :root{
+      --ink:#1a1c1e; --muted:#5c6470; --line:#dfe3e8; --bg:#ffffff;
+      --card:#ffffff; --accent:#2f5d50; --accent-soft:#eef3f1; --gold:#8a6320;
+    }
+    body{
+      background:#fff; color:#1a1c1e;
+      -webkit-print-color-adjust:exact; print-color-adjust:exact;
+    }
+    .page{max-width:none; padding:0;}
+    .pdfbtn{display:none !important;}
+    .card, .thesis, .two, .mini, tr, footer{break-inside:avoid; page-break-inside:avoid;}
+    .daybar{break-after:avoid; page-break-after:avoid;}
+    .card h2, .daybar h2{break-after:avoid;}
+    a{color:var(--accent); text-decoration:none;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="kicker">지식의 숲 · Day 1–3</div>
+    <h1>핵심 개념 &amp; 프레임워크 요약 노트</h1>
+    <div class="sub">2026.07.27 · 07.30 · 08.04 &nbsp;|&nbsp; 관점: 의사결정 → 경영철학 → 전략 → 리더십 → 지식·기록 → 조직·사람·지속가능성</div>
+  </header>
+
+  <div class="daybar">
+    <span class="dnum">Day 1</span>
+    <h2>철학 · 전략 · 리더십의 뼈대</h2>
+    <span class="dmeta">2026.07.27</span>
+  </div>
+
+  <div class="thesis">
+    <b>한 줄 결론</b> — 도구(데이터·AI)로 <b>효율</b>을 얻되, 철학(가치·목적)으로 <b>방향</b>을 정하고,
+    신뢰(투명성)로 조직을 움직여 <b>효과성(Effectiveness)</b>을 낸다.
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <h2><span class="num">1</span>의사결정의 본질</h2>
+      <p class="lead">데이터·AI는 도구, 판단의 주체는 사람</p>
+      <p><strong class="hl">M&amp;A 실사(Due Diligence)</strong>는 재무 분석을 넘어 산업 특성·법규·기업문화(DNA) 통합까지 보는 고차원 작업.</p>
+      <p>데이터만으로 풀리지 않는 <b>전략적 판단</b>과 <b>문제의 본질 정의</b>가 선행되어야 한다.</p>
+      <p><strong class="hl">미분 vs 적분</strong> — 순간의 변동(미분)에 일희일비하지 말고, 전체 흐름·총량(적분)으로 판단하라.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="num">2</span>경영철학의 구조</h2>
+      <p class="lead">어려운 순간의 의사결정 나침반</p>
+      <div class="flow">
+        <span class="chip">사명 Mission</span><span class="arr">+</span>
+        <span class="chip">핵심가치 Core Value</span><span class="arr">+</span>
+        <span class="chip">원칙 Principle</span>
+      </div>
+      <p style="margin-top:10px;"><strong class="hl">핵심가치는 명사가 아닌 동사로</strong> — '자유' ✗ → '자유를 위해 싸운다' ✓. 매 순간 행동으로 증명될 때 진짜 가치가 된다.</p>
+      <p>조직·결혼 모두 <b>가치 정렬(Alignment)</b>이 클수록 갈등↓ 시너지↑. 가치 충돌은 자존감 문제로 번진다.</p>
+    </div>
+
+    <div class="card full">
+      <h2><span class="num">3</span>전략 체계 — 층위를 구분해야 실행이 흔들리지 않는다</h2>
+      <table>
+        <tr><th>개념</th><th>정의</th><th>시간축</th></tr>
+        <tr><td class="k">목표 Goal</td><td>도달하려는 최종 지점</td><td>장기</td></tr>
+        <tr><td class="k">전략 Strategy</td><td>제한된 자원으로 압도적 성과를 내는 <b>방향 결정</b> (내부→외부, 능동적)</td><td>통상 3년+</td></tr>
+        <tr><td class="k">전술 Tactics</td><td>전략을 이기기 위한 방법</td><td>중기</td></tr>
+        <tr><td class="k">액션플랜 Action Plan</td><td>실행을 위한 구체 계획</td><td>1~3개월</td></tr>
+      </table>
+      <div class="two">
+        <div class="mini"><b>조류 Direction</b>외부→내부로 밀려오는 흐름. 민주화·자본주의 같은 <b>메가트렌드</b> (수동적 인식 대상)</div>
+        <div class="mini"><b>전략 Strategy</b>흐름을 이해한 뒤 내부→외부로 나아가는 <b>능동적 결정</b>. 과제는 '방향과 전략의 괴리' 최소화</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2><span class="num">4</span>리더십의 두 축</h2>
+      <div class="two">
+        <div class="mini"><b>용기 Courage</b>아닌 것을 아니라 말하는 힘. 시작뿐 아니라 <b>'중단하는 용기'</b>까지 포함</div>
+        <div class="mini"><b>희망 Hope</b>어려움 속에서도 나아갈 <b>방향을 제시</b>하는 것</div>
+      </div>
+      <p style="margin-top:10px;"><b>감정 안정성</b> — 리더의 감정 기복은 조직 전체로 불안을 확산. 일관된 철학으로 안정성 유지.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="num">5</span>조직문화 — 투명성 &amp; 신뢰</h2>
+      <p>실수·실패, 나쁜 소식까지 공유되는 <strong class="hl">투명한 환경</strong> (레이 달리오 『원칙』).</p>
+      <p>신뢰는 <b>배신의 위험까지 감수</b>하는 데서 출발한다.</p>
+      <p>리더의 행동 = 팀 문화. <b>경청 우선 · 자율 의사결정 지원 · 반복 소통의 인내심</b>.</p>
+    </div>
+
+    <div class="card full">
+      <h2><span class="num">6</span>지향점 — 효율성을 넘어선 효과성</h2>
+      <div class="flow">
+        <span class="chip">효율성 Efficiency</span>
+        <span class="arr">→ 넘어서 →</span>
+        <span class="chip">효과성 Effectiveness</span>
+      </div>
+      <p style="margin-top:10px;">전문가로 훈련된 <b>효율</b>(정해진 일을 잘함)도 중요하지만, 조직 리더는 <b>목적을 명확히 하고 더 큰 임팩트를 내는 의사결정</b>(옳은 일을 함)으로 나아가야 한다.</p>
+    </div>
+
+  </div>
+
+  <div class="daybar">
+    <span class="dnum">Day 2</span>
+    <h2>지식 · 기록 · 신뢰 — 철학을 작동시키는 인프라</h2>
+    <span class="dmeta">2026.07.30</span>
+  </div>
+
+  <div class="thesis">
+    <b>한 줄 결론</b> — 철학은 <b>지식 위에서만</b> 작동한다. 도메인 지식(회계·산업·역사)으로 판단의 근거를 쌓고,
+    AI에 계산을 위임하되 <b>편향을 읽고</b>, 결정을 <b>기록</b>으로 남겨 신뢰를 만든다.
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <h2><span class="num">1</span>회계 — 자본주의를 읽는 언어</h2>
+      <p class="lead">숫자 계산법이 아니라 도메인 지식의 토대</p>
+      <p>회계에는 <strong class="hl">자본주의·민주주의의 역사와 재산권 보호</strong>의 뿌리가 담겨 있다. 이 언어를 습득하는 과정 자체가 실력이 된다.</p>
+      <p>테슬라처럼 <b>재무제표만으로 설명되지 않는 기업</b>이 존재 — 회계적 창의성과 기술적 언어 사이의 간극을 이해해야 가치가 보인다.</p>
+      <p>단기 재무제표를 넘어선 <b>확신</b>이 미래 가치를 만든다 (반도체 산업 확신, 스페이스X 화성 프로젝트).</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="num">2</span>AI 활용 4원칙</h2>
+      <p class="lead">계산은 위임하고, 판단은 회수한다</p>
+      <div class="two">
+        <div class="mini"><b>① 위임</b>계산·정리 등 반복 업무를 AI로 효율화해 비용 절감</div>
+        <div class="mini"><b>② 편향 이해</b>회계·금융 데이터는 강력하지만 편향됨. 알고 써야 객관적 수치가 나옴</div>
+        <div class="mini"><b>③ 학습 자산화</b>지난 10년의 기록·규칙을 학습시켜 의사결정 오류를 줄임</div>
+        <div class="mini"><b>④ 압축</b>큰 문제를 작은 단위로 쪼개고 핵심만 남기는 압축 기술</div>
+      </div>
+      <p style="margin-top:10px;">AI가 <b>대체할 수 없는 영역</b> = 감정 + 철학적 판단. 확신과 추진력은 사람의 몫이다.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="num">3</span>비난 ≠ 비평</h2>
+      <p class="lead">조직 역량을 키우는 피드백의 조건</p>
+      <div class="two">
+        <div class="mini bad"><b>비난 Blame</b>사람을 향함 · 감정 소모 · 방어 유발</div>
+        <div class="mini"><b>비평 Critique</b>논제를 향함 · 논리와 근거 · 역량 강화</div>
+      </div>
+      <p style="margin-top:10px;">책임 추궁이 아니라 <strong class="hl">프로세스 개선</strong>으로 소통. 팀장급은 실무팀과 협력해 <b>명확한 기준</b>을 제시해야 한다.</p>
+      <p>정기적인 <b>비판적 사고 훈련</b>으로 서로 비평할 수 있는 팀을 만든다.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="num">4</span>필요성 vs 중요성</h2>
+      <p class="lead">리더의 철학적 과제</p>
+      <table>
+        <tr><th>구분</th><th>의미</th><th>대체 가능성</th></tr>
+        <tr><td class="k">필요성 Necessity</td><td>지금 그 자리를 채우는 것</td><td>대체 가능</td></tr>
+        <tr><td class="k">중요성 Importance</td><td>조직에 고유한 가치를 만드는 것</td><td>대체 불가</td></tr>
+      </table>
+      <p style="margin-top:10px;">조직이 커질수록 개인의 <b>'중요성'을 높이는 설계</b>가 리더의 과제. 구성원이 <b>자신의 장점을 발휘할 환경</b>을 만드는 것이 회사를 바꾼다.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="num">5</span>예방 &gt; 대응</h2>
+      <p class="lead">조직 운영의 기본 자세</p>
+      <div class="two">
+        <div class="mini bad"><b>대응적 활동 Reactive</b>사고 후 수습 · 비용과 불안 증가</div>
+        <div class="mini"><b>예방적 활동 Preventive</b>발생하지 않도록 설계 · 지속가능성 ↑</div>
+      </div>
+      <p style="margin-top:10px;">구성원에게 <b>안정적인 환경</b>을 제공해 불안 없이 목표에 집중하게 하는 것이 리더의 역할이다.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="num">6</span>시간축 — 버티는 것도 전략</h2>
+      <table>
+        <tr><th>기간</th><th>의미</th></tr>
+        <tr><td class="k">415일+</td><td>위기에서 자원이 없을 때도 장기 계산으로 답을 만든다</td></tr>
+        <tr><td class="k">2년</td><td>기간을 걸고 어려운 시기를 버티며 <b>타이밍</b>을 맞추는 게임</td></tr>
+        <tr><td class="k">7년</td><td>일반 기업 생존의 벽 — 유지가 아니라 <b>변화</b>로 넘는다</td></tr>
+      </table>
+      <p style="margin-top:10px;">거대 조직일수록 단기 지표를 넘어 <b>장기 비전</b>을 세우고, 상황을 압축적으로 분석해 대응한다.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="num">7</span>신뢰의 조건 — 지적 겸손 + 기록</h2>
+      <p>리더가 <strong class="hl">"나도 틀릴 수 있다"</strong>는 개방적 태도를 보일 때 신뢰가 생기고, 그 신뢰가 혁신과 올바른 의사결정의 동력이 된다.</p>
+      <p><b>철학적 근거와 설명</b> 없는 지시는 신뢰를 만들지 못한다. 리더는 조직의 비난과 갈등을 감내하며 방향을 제시해야 한다.</p>
+      <p>개별 전략·의사결정을 <b>문서화하고 공유</b> → 조직의 역사가 곧 지식자산.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="num">8</span>질문과 감정의 기술</h2>
+      <p><b>좋은 질문</b> = 상대의 <strong class="hl">장점을 끌어내는 긍정적 질문</strong>. 1:1에서는 상대를 깊이 이해하는 질문을 쓴다.</p>
+      <p><b>감정 제어 프로세스</b> — 디지털 정보 과부하 시대에 감정 관리가 의사결정 품질을 좌우한다.</p>
+      <p>거창한 철학과 매일의 실무 사이 <b>균형</b>: 당장의 업무에 몰입하는 과정 자체가 철학의 실천이다.</p>
+    </div>
+
+    <div class="card full">
+      <h2><span class="num">9</span>케이스 — 이순신: 절박함 속에서 지킨 철학</h2>
+      <p class="lead">세종대왕·이순신 장군이 남긴 것은 승리가 아니라 <b>기록과 철학</b>이다</p>
+      <div class="two">
+        <div class="mini"><b>기록 Record</b>『난중일기』는 고뇌와 책임의 기록. 남긴 자가 후대에 평가받고 기억된다</div>
+        <div class="mini"><b>전략 Position</b>지형지물을 전략적으로 활용 — 상황을 정확히 판단하고 준비하는 것이 승리의 조건</div>
+        <div class="mini"><b>가치 Core Value</b>절박한 상황에서도 인간이 상상할 수 있는 가장 높은 수준의 가치를 유지. 무능한 의사결정권자(선조)와 대비되는 결단력</div>
+        <div class="mini"><b>희생 Sacrifice</b>개인적 비극과 책임의 무게 — '헛되지 않은 죽음'이란 무엇인가에 대한 질문</div>
+      </div>
+      <p style="margin-top:10px;"><b>현대적 적용</b> — 배와 무기처럼 기술적·복잡한 이해가 필요한 분야일수록(반도체·AI) <strong class="hl">지식과 철학을 겸비한 리더십</strong>이 요구된다. 열악한 자원 속에서도 물류와 인적 자원을 효율적으로 배분한 사고가 현대중공업 같은 거대 조직의 탄생 배경과 닿아 있다.</p>
+    </div>
+
+    <div class="card full">
+      <h2><span class="num">10</span>지식 축적 루틴 — 나만의 데이터베이스 만들기</h2>
+      <p class="lead">모델을 훈련시키듯, 읽고 말하며 자신의 지식 베이스를 구축한다</p>
+      <div class="flow">
+        <span class="chip">수집 Scan</span><span class="arr">→</span>
+        <span class="chip">선별 Curate</span><span class="arr">→</span>
+        <span class="chip">축적 Accumulate</span><span class="arr">→</span>
+        <span class="chip">발화 Articulate</span>
+      </div>
+      <ul style="margin-top:10px;">
+        <li><b>500 아티클</b> — 산업 지식 베이스의 글 500개 읽기. 목표는 <strong class="hl">디스커넥트 환경에서도 작동하는 지적 능력</strong>.</li>
+        <li><b>매체 선별</b> — 소비재 잡지와 전문 산업 분석 보고서를 구분. 맥킨지 쿼터리 등은 마케팅 목적이 섞여 있지만 <b>프레임워크와 인사이트는 자산</b> → 비즈니스 의도를 비판적으로 읽을 것.</li>
+        <li><b>영역 확장</b> — AI·반도체에 갇히지 말고 예술·음악·체육·건축까지. 중고 서적과 오래된 잡지에서 과거 자료를 발굴하면 새로운 통찰이 나온다.</li>
+        <li><b>과거로 미래 예측</b> — 누적된 기록과 인용을 검토하면 산업의 변화 양상이 보인다. M&amp;A 사례와 벤치마킹 대상을 지속 스캔해 패턴과 유사성을 파악.</li>
+        <li><b>말하기 훈련</b> — 많이 읽고 많이 말할 때 창의적 통찰이 생긴다. 전문가와 대화하려면 표면 지식이 아닌 <b>깊이 있는 지식 베이스</b>가 필수.</li>
+      </ul>
+      <p style="margin-top:8px;">※ 조직 차원에서는 <b>비판적 사고로 문제를 정의하고 → 조직의 역사를 기록하고 → 지식을 축적</b>하는 것이 향후 지식 관리의 핵심 과제.</p>
+    </div>
+
+    <div class="card full">
+      <h2><span class="num">11</span>실행 과제 (Next Steps)</h2>
+      <table>
+        <tr><th>대상</th><th>과제</th></tr>
+        <tr><td class="k">그룹</td><td><b>핵심가치·전략 재정립</b> — 실무 팀장 교육을 통해 조직의 본질적 핵심가치와 전략을 구성원에게 명확히 전달할 체계 마련</td></tr>
+        <tr><td class="k">그룹</td><td><b>비평 훈련 정례화</b> — 비난이 아닌 비평이 가능하도록 논제 기반 비판적 사고 훈련을 정기 시행</td></tr>
+        <tr><td class="k">그룹</td><td><b>의사결정 체계 문서화</b> — 경영진·구성원 간 신뢰 구축을 위해 전략과 의사결정 내용을 통합 문서화하고 공유</td></tr>
+        <tr><td class="k">구성원</td><td><b>지식 축적</b> — 산업 지식 베이스 사이트의 글 500개 읽기, 오프라인에서도 작동하는 지적 능력 확보</td></tr>
+        <tr><td class="k">구성원</td><td><b>질문 훈련</b> — 장점을 끌어내는 긍정적 질문 훈련, 1:1 대화에서 상대를 깊이 이해하는 질문 활용</td></tr>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="daybar">
+    <span class="dnum">Day 3</span>
+    <h2>조직 · 사람 · 지속가능성 — 실력과 매력의 균형</h2>
+    <span class="dmeta">2026.08.04</span>
+  </div>
+
+  <div class="thesis">
+    <b>한 줄 결론</b> — 사업(Company)은 스스로 판단하는 <b>독립적 전술 단위</b>이고, 그 지속가능성은
+    <b>실력 × 매력</b>과 <b>심리적 여유</b> 위에 선다. 리더는 동기를 주입하는 사람이 아니라,
+    <b>동기를 막는 것을 걷어내고 시스템을 남기는</b> 사람이다.
+  </div>
+
+  <div class="grid">
+
+    <div class="card">
+      <h2><span class="num">1</span>사업의 정의 — Company = 중대</h2>
+      <p class="lead">어원에서 조직 단위의 본질을 읽는다</p>
+      <p>영어 <strong class="hl">Company</strong>는 군대의 <b>중대</b>와 같은 말. 중대는 통상 <b>100~200명</b> 규모로, <b>독립적인 전술적 의사결정이 가능한 최소 단위</b>다.</p>
+      <p>즉 사업은 시키는 일을 수행하는 것이 아니라, <b>스스로 판단하고 목표를 완결하는 단위</b>다.</p>
+      <p>현대 기업 조직도 단일 공정·특정 프로젝트를 독립적으로 완결하는 구조를 지향해야 한다. <b>이 특성을 이해하지 못하면 성과가 나지 않는다.</b></p>
+    </div>
+
+    <div class="card">
+      <h2><span class="num">2</span>지속가능성 &amp; 재무 체력</h2>
+      <p class="lead">Sustainability는 이윤이 아니라 합의의 문제</p>
+      <p>지속가능성 = 이윤 추구를 넘어 <strong class="hl">구성원 모두가 합의할 수 있는 방식</strong>으로 가치를 창출·유지하는 것.</p>
+      <p>단기 성과에 매몰되어 인적 자원·생산 주체와의 <b>신뢰를 저버리면</b> 결국 비즈니스의 근본적 붕괴로 이어진다.</p>
+      <p><b>부채·자본 구조</b>가 사업의 존립을 결정한다. 극단적 재무 상황은 조직을 무너뜨리므로 <b>회복 탄력성</b> 확보가 필수.</p>
+      <p>의사결정의 시간축은 <strong class="hl">최소 10년, 길게는 30년</strong>. 주식·단기 지표에 일희일비하지 않는다.</p>
+    </div>
+
+    <div class="card full">
+      <h2><span class="num">3</span>실력 × 매력 — 생존의 기반과 성장의 가속도</h2>
+      <p class="lead">리더와 구성원이 갖춰야 할 두 축. 구분해서, 각각 키운다</p>
+      <div class="two">
+        <div class="mini"><b>실력 Competence</b>생존과 기본 성과를 담보하는 <b>기반</b>. 없으면 아무것도 시작되지 않지만, 실력만으로는 반드시 한계에 부딪힌다</div>
+        <div class="mini"><b>매력 Attraction</b>보여지는 모습이 아니라 <b>중력처럼 타인을 끌어당기는 힘</b>. 사람들이 자발적으로 돕고 따르게 만들어 성장을 <b>가속</b>한다</div>
+      </div>
+      <ul style="margin-top:10px;">
+        <li><b>네트워킹 전략</b> — 의도적으로 찾아다니기보다 자기 분야에서 <b>실력과 위치를 공고히 해 찾아오게 만든다</b>. 무조건적 베풂이나 수동적 관계보다 자기 위치를 명확히 하는 태도가 중요.</li>
+        <li><b>경쟁자 = 동료</b> — 경쟁사를 적으로만 보지 않고 배우는 태도가 <b>산업 전체의 매력</b>을 높이고 개인의 성장을 돕는다.</li>
+        <li><b>커리어의 가속도</b> — 경력이 쌓일수록 실력과 매력에 가속이 붙어야 한다. <strong class="hl">60대 이후에도 성장하려면 자기만의 철학</strong>이 확립되어 있어야 한다.</li>
+        <li><b>자기 객관화</b> — 배우자·부모·상사의 피드백으로 장단점을 객관적으로 파악하고, 강점을 어떻게 발휘할지 구체적으로 정리한다.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2><span class="num">4</span>복잡계 — 통제 가능한 범위에 집중</h2>
+      <p class="lead">결정론적 시각의 한계를 인정하기</p>
+      <p>사회와 사업은 하나의 <strong class="hl">복잡계(Complex System)</strong>. 단순한 문제와 달리 결정론만으로는 설명되지 않는 불확실성이 상존한다.</p>
+      <p>상황에는 <b>유연하게</b> 대응하되, 장기적 <b>방향성은 잃지 않는 것</b>이 핵심.</p>
+      <p>환율·집값 같은 거시 변수의 영향은 인식하되, 지나친 걱정 대신 <b>본인이 통제 가능한 범위의 업무</b>에 집중한다.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="num">5</span>심리적 여유 — 위기의 판단력</h2>
+      <p class="lead">성과만큼 중요한 리더의 자산</p>
+      <p>경제적 자원이 부족해도 <strong class="hl">심리적 여유가 있는 사람이 위기에서 더 나은 판단</strong>을 내리고 주변에 긍정적 영향을 준다.</p>
+      <p>외부 정보와 뉴스에 휘둘리지 않고 <b>본질적인 문제에 집중</b>할 수 있는 상태를 유지한다.</p>
+      <p>리더·부모가 스스로 여유를 가질 때 <b>타인에게 시간을 열어줄 수</b> 있다. 자신의 지식과 스킬을 <b>반복해서 설명하는 인내</b>도 리더의 일.</p>
+      <p>일과 가정은 분리되지 않는다. 서로 영향을 주고받는 현실을 인정하고 <b>조화롭게 관리</b>하되, 고립된 시간에는 집중한다.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="num">6</span>자기 객관화 &amp; 번아웃</h2>
+      <p class="lead">내 상태를 아는 것이 성장의 전제</p>
+      <p>지금이 <b>번아웃(Burnout)</b>인지 <b>동기 저하</b>인지 스스로 구분할 수 있어야 한다.</p>
+      <p>주관적 판단에 머물지 말고 필요하면 <strong class="hl">객관적 검사·전문가의 도움</strong>으로 현재 심리 상태를 정확히 파악한다.</p>
+      <p>회사 차원에서 개인의 상황을 경청·분석해 회복을 돕는 것이 <b>장기 근속의 조건</b>이다.</p>
+      <p>30대 세대는 이전보다 심리적으로 열려 있으나 <b>스스로를 독재하는 경향</b>도 크다. 불안·긴장은 과거 경험에서 올 수 있으므로 부정하지 말고 <b>왜 그런지 이해하는 훈련</b>이 필요하다.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="num">7</span>동기부여 — 주입 ✗, 제거 ✓</h2>
+      <p class="lead">동기 관리의 순서를 바꾼다</p>
+      <div class="two">
+        <div class="mini bad"><b>주입 Injection</b>동기 없는 사람에게 동기를 억지로 넣기 · 소모적</div>
+        <div class="mini"><b>제거 Removal</b>동기를 <b>저해하는 근본 요인</b>을 찾아 없애기 · 선행되어야 할 과정</div>
+      </div>
+      <p style="margin-top:10px;">동기 없는 사람을 끌어올리기보다 <strong class="hl">이미 동기가 부여된 사람이 지치지 않게 관리</strong>하는 것이 훨씬 효율적이다.</p>
+      <p>동기부여 강연은 일시적 카타르시스일 뿐. 실질적 변화는 <b>지식·기술 측면의 훈련과 반복</b>에서 나온다.</p>
+    </div>
+
+    <div class="card">
+      <h2><span class="num">8</span>도움 요청 = 전략적 행동</h2>
+      <p class="lead">나약함이 아니라 결정 품질을 높이는 기술</p>
+      <p>도움 요청은 <strong class="hl">본인의 능력을 높이고 더 나은 결정을 내리기 위한 전략</strong>이다. 남성 조직문화·군대 경험에서 이를 터부시하는 경향을 인식하고 <b>의식적으로 훈련</b>해야 한다.</p>
+      <p><b>구체적으로 요청하라</b> — 모호한 요청은 상대가 도울 수 없게 만든다. 거절당하더라도 명확한 소통의 중요성을 배운다.</p>
+      <p><b>언어 선택</b> — '도와달라'는 직설 외에 '도와주시면 좋겠다' 같은 전략적 표현을 함께 쓴다. 타인을 <b>활용</b>하는 것이 아니라 <b>시너지를 극대화</b>하는 개념.</p>
+      <div class="two" style="margin-top:10px;">
+        <div class="mini"><b>독립 Independence</b>스스로 서되 타인과 연대하고 도움을 구한다</div>
+        <div class="mini bad"><b>고립 Isolation</b>상처를 피하려 자신을 가둠 · 독립이 아니라 <b>매력을 잃는 길</b></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2><span class="num">9</span>소통 — 동사로 말하라</h2>
+      <p class="lead">감정 소모를 줄이고 액션 아이템을 남기는 법</p>
+      <p>모호한 <b>형용사·부사를 제거</b>하고 <strong class="hl">명확한 동사 위주</strong>로 지시하고 소통한다. 불필요한 감정 소모가 줄고 액션 아이템이 분명해진다.</p>
+      <p><b>다양성 인정</b> — 개인의 특성이나 취향은 다양할 수 있음을 인정하고 섣불리 단정하거나 비난하지 않는다.</p>
+      <p><b>정보의 구조화</b> — 의사결정이 파편화되지 않도록 정보를 구조화하고, 의사결정권자와 실무자 간 <b>간극을 줄이는 커뮤니케이션 체계</b>를 만든다.</p>
+    </div>
+
+    <div class="card full">
+      <h2><span class="num">10</span>리더의 의사결정 전략 — 다 풀지 말고, 시스템을 남겨라</h2>
+      <div class="two">
+        <div class="mini"><b>선택적 개입 Selective Focus</b>모든 문제를 직접 해결하려 하지 말고 <b>과감히 지나칠 문제</b>를 고른다. 목표는 <b>리더가 없어도 돌아가는 시스템</b></div>
+        <div class="mini"><b>신뢰 기반 위임 Delegation</b>팀원의 역량을 믿고 맡긴다. 리더는 해결사가 아니라 <b>환경을 조성하고 주변을 보조</b>하는 역할</div>
+        <div class="mini"><b>장점 발굴 Strength Finding</b>팀원이 나보다 잘하는 분야가 있는 것은 자연스러운 일. <b>위협이 아니라 발굴의 기회</b>로 본다</div>
+        <div class="mini"><b>윤리적 프레임워크 Ethics</b>규정 그 자체보다 <b>사람을 살리고 문제를 해결하는 철학</b>이 먼저. 때로는 규정보다 인간 중심의 유연한 결정이 필요</div>
+      </div>
+      <p style="margin-top:10px;"><b>신뢰의 형성</b> — 신뢰는 단기간에 생기지 않는다. 업무 방식과 철학을 공유하는 시간이 필요하며, 형성되면 <strong class="hl">소통 비용 ↓ · 의사결정 속도와 정확도 ↑</strong>.</p>
+      <p><b>고객 신뢰</b> — 마케팅 기술에 의존하기보다 본질적 가치를 제공한다. 긴급 상황에서 팀원과 고객을 보호하는 결정이 결국 장기적 신뢰를 만든다.</p>
+      <p><b>조직 정렬</b> — 리더십이 부재하거나 합의점이 불분명하면 팀원은 혼란을 겪는다. 리더는 방향성을 명확히 전달하고 같은 곳을 보게 만들어야 한다.</p>
+    </div>
+
+    <div class="card full">
+      <h2><span class="num">11</span>성장의 구간 — 지루함 · 관성 · 커리어</h2>
+      <p class="lead">반복이 지겨워지는 그 지점이 실력이 쌓이는 구간이다</p>
+      <ul>
+        <li><b>지루함 = 성장 구간</b> — 반복 업무가 지루하게 느껴지는 시점이 실력이 축적되는 중요한 구간. 이 구간을 견뎌야 더 높은 성과가 나온다. 매너리즘을 피하려면 <b>자기 방식을 다양화</b>하되, 회피하거나 고립되는 것은 도움이 되지 않는다.</li>
+        <li><b>업무 주기 관리</b> — 시즌별 운영 주기가 있는 사업은 <b>피크 타임과 비수기를 명확히 구분</b>한다. 집중할 때 전력을 다하고, 그 외에는 전략 수정·휴식으로 에너지 효율을 관리.</li>
+        <li><b>관성의 극복</b> — 인간은 익숙한 방식으로 돌아가려 한다. 변화를 안착시키려면 일시적 노력이 아니라 <strong class="hl">구조적 시스템 변화 + 지속적 피드백</strong>이 필요.</li>
+        <li><b>도구 활용</b> — GPT 등으로 생산성을 높이되 <b>아웃풋에만 집착하지 않는다</b>. 장기적 관점의 개인·팀 성장이 목적.</li>
+        <li><b>팀장직의 무게</b> — 파트장의 실무 부담과 팀장 승진 푸시 사이의 갈등은 자연스럽다. 승진은 직함이 아니라 <b>새로운 책임과 성장 단계</b>. 부족함을 인정하고 보완하는 과정에서 리더가 된다.</li>
+        <li><b>제너럴한 경영</b> — 지시가 아니라 종합적 관점에서 <b>산업의 방향을 설정하고 팀원에게 성장할 권리를 부여</b>하는 것. 세워진 전략은 구체적 운영 계획으로 연결되어야 하며, 전략이 흔들리면 조직의 몰입도가 떨어진다.</li>
+      </ul>
+    </div>
+
+    <div class="card full">
+      <h2><span class="num">12</span>실행 과제 (Next Steps)</h2>
+      <table>
+        <tr><th>대상</th><th>과제</th></tr>
+        <tr><td class="k">조직</td><td><b>조직 역량 분석</b> — 구성원의 <b>실력과 매력</b>을 평가해 각자의 위치에서 발전할 방향을 정립</td></tr>
+        <tr><td class="k">조직</td><td><b>사업 지속가능성 점검</b> — 현재의 자원 활용 방식과 의사결정 프로세스를 점검</td></tr>
+        <tr><td class="k">조직</td><td><b>팀원 관리 계획 수립</b> — 강점을 활용하고 업무 몰입도를 높이는 협력적 환경 조성 방안 마련</td></tr>
+        <tr><td class="k">개인</td><td><b>심리적 여유 확보</b> — 개인별 전략을 수립·공유해 조직 내 긍정적 영향 도모</td></tr>
+        <tr><td class="k">개인</td><td><b>심리 상담</b> — 겪고 있는 심리적 어려움을 타인과 상의하기</td></tr>
+        <tr><td class="k">개인</td><td><b>장단점 확인</b> — 배우자·부모에게 본인의 장단점을 물어 객관적으로 정리</td></tr>
+        <tr><td class="k">개인</td><td><b>업무 피드백 요청</b> — 상사에게 강점과 부족한 점에 대한 구체적 피드백을 요구하고, 필요한 도움을 명확히 전달</td></tr>
+        <tr><td class="k">개인</td><td><b>팀장직 고민 공유</b> — 역할 수행에 대한 두려움·준비 상태·커리어 고민을 상사에게 솔직하게 전달</td></tr>
+      </table>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>지식의 숲 Day 1–3 · 핵심 개념·프레임워크 중심 요약</span>
+    <span>
+      <a href="https://docs.google.com/document/d/1e2cx1wnURGSVeyw3GrUHFhu_QJfyNDtSyFRofC35Cjc/edit">Day 1 원문 →</a>
+      &nbsp;·&nbsp;
+      <a href="https://docs.google.com/document/d/1LhbPiF77j6CNOyt-qjxqVY37RSq4L-zfBVbHkBax7dM/edit?tab=t.9gmizllib0tv">Day 2 원문 →</a>
+      &nbsp;·&nbsp;
+      <a href="https://docs.google.com/document/d/150mEprrM10voJlHPY8f7uGYEwXBxT3Tkn2oODEDPU7w/edit?tab=t.nmr7wmnu9lbf">Day 3 원문 →</a>
+    </span>
+  </footer>
+</div>
+<button class="pdfbtn" onclick="window.print()" title="브라우저 인쇄 대화상자에서 '대상 → PDF로 저장' 선택">PDF로 저장</button>
+</body>
+</html>
