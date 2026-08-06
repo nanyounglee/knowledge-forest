@@ -24,7 +24,7 @@ param(
     [string]$Source  = "C:\Users\user\Downloads\knowledge_forest_day1-3.html",
     [string]$RepoDir = $PSScriptRoot,
     [string]$Message,
-    [string]$Description = "지식의 숲 강연 요약 - 의사결정·경영철학·전략·리더십·지식기록·조직과 지속가능성의 핵심 개념과 프레임워크",
+    [string]$Description = "지식의 숲 강연 요약 - 의사결정·경영철학·전략·리더십·지식기록·조직과 지속가능성, 그리고 MECE·PEST·3C·P&Q 논리 프레임워크의 핵심 개념 정리",
     [switch]$DryRun,
     [switch]$SkipVerify
 )
